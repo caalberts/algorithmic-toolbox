@@ -30,5 +30,16 @@ def recursive_change(coins, money)
 end
 
 def dynamic_prog_change(coins, money)
-  
+  return 0 if money == 0
+  best = -1
+  nextTry = 0
+  coins.each do |coin|
+    if coin <= money
+      nextTry = dynamic_prog_change(coins, money - coin)
+    end
+    if (best < 0) || (best > (nextTry + 1))
+      best = nextTry + 1
+    end
+  end
+  best
 end
