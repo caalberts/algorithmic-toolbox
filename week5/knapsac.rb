@@ -1,4 +1,4 @@
-# !usr/bin/env rubyif __FILE__ == $0
+# !usr/bin/env ruby
 
 def pack(capacity, items)
   dynamic_pack(capacity, items)
